@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Pauline's Home</title>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+<style>
+.container {
+    padding: 20px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 200px;
+}
+
+.map {
+    width: 60%;
+    background-color: #ff9900;
+    border: 2px solid #8a2be2;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.info {
+    width: 35%;
+    font-size: 16px;
+}
+
+.info h3 {
+    margin-top: 0;
+}
+
+.info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info ul li img {
+    width: 24px;
+    height: 24px;
+}
+
+.opening-hours {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+}
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../src/pauline.jpeg" alt="Pauline's Logo">
+        </div>
+        <nav>
+            <a href="index.html"  class="active">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="menu.html">MENU</a>
+            <a href="booking.html">BOOKING</a>
+            <a href="support.html">JOIN OUR TEAM</a>
+        </nav>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/PaulinesRestaurantMY/" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a>
+            <a href="https://wa.me/60174730109" target="_blank"><i class="fab fa-whatsapp fa-2x"></i></a>
+            <a href="https://www.instagram.com/paulines_my/?hl=en" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content">
+            <div class="map">
+		<!--First Location Map -->
+		<iframe 
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31351.34546030392!2d100.30391941690596!3d5.446047799999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac37f58c202c7%3A0x4673402c9443292b!2sPauline's!5e0!3m2!1sen!2smy!4v1672001559349!5m2!1sen!2smy" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33006.42773340931!2d101.7906314!3d3.426486099999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc155ce1bf4525%3A0xa0a8925478bde4bc!2sPauline's!5e0!3m2!1sen!2smy!4v1672001587891!5m2!1sen!2smy" 
+                    width="100%" height="100%" style="border:0; " allowfullscreen="" loading="lazy"></iframe>
+	</div>
+            <div class="info">
+                <ul>
+                    <li>
+                        <img src="../src/home icon.jpeg" alt="Home Icon">
+                        3h, Jalan Pantai Molek, Kampung Raya Baharu, 10470 Tanjung Tokong, Pulau Pinang
+                    </li>
+                    <li>
+                        <img src="../src/hotel icon.jpeg" alt="Hotel Icon">
+                        First World Hotel, Genting Highlands Resort, 69000 Genting Highlands, Pahang
+                    </li>
+                </ul>
+                <div class="opening-hours">Opening hour:<br>Daily 11AM - 12AM</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

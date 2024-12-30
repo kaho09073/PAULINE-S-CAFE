@@ -1,0 +1,89 @@
+/* Responsive grid layout for the category container */
+.category-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 items per row for large screens */
+    gap: 20px; /* Space between items */
+    padding: 20px; /* Consistent padding around the grid */
+    box-sizing: border-box; /* Ensures padding and borders don't overflow */
+    justify-items: center; /* Centers the content in each grid cell */
+}
+
+/* Individual item styling */
+.item {
+    text-align: center; /* Centers the text and image */
+}
+
+/* Image styling */
+.item img {
+    width: 250px; /* Consistent width for images */
+    height: 250px; /* Consistent height for images */
+    border-radius: 10px; /* Smooth rounded corners */
+    object-fit: cover; /* Ensures the image fits within the specified dimensions */
+}
+
+/* Item name styling */
+.item-name {
+    margin-top: 10px; /* Space between image and text */
+    font-size: 18px; /* Font size for item names */
+    font-weight: bold; /* Bold text for emphasis */
+    color: #333; /* Dark gray text for readability */
+}
+
+/* Back button styling */
+.back-button {
+    margin: 20px; /* Adds space around the button */
+    padding: 10px 20px; /* Internal padding for the button */
+    background-color: #ff9900; /* Bright orange background */
+    border: none; /* Removes default border */
+    border-radius: 5px; /* Rounded corners for the button */
+    font-size: 16px; /* Button text size */
+    cursor: pointer; /* Pointer cursor on hover */
+    color: white; /* White text for contrast */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+/* Back button hover effect */
+.back-button:hover {
+    background-color: #cc7a00; /* Darker orange on hover */
+}
+
+/* Body background styling */
+body {
+    background-image: url("../src/Background.jpg"); /* Background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center top; /* Align the background image */
+    margin: 0; /* Removes default margin */
+    font-family: Arial, sans-serif; /* Default font for consistency */
+}
+
+/* Responsive adjustments for smaller devices */
+@media (max-width: 1024px) {
+    .category-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row for tablets */
+    }
+
+    .item img {
+        width: 200px; /* Slightly smaller image size */
+        height: 200px; /* Maintain aspect ratio */
+    }
+}
+
+@media (max-width: 768px) {
+    .category-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row for smaller screens */
+    }
+
+    .item img {
+        width: 180px; /* Smaller image size for smaller screens */
+        height: 180px; /* Maintain aspect ratio */
+    }
+
+    .item-name {
+        font-size: 16px; /* Slightly smaller text */
+    }
+
+    .back-button {
+        padding: 8px 16px; /* Adjust button size */
+        font-size: 14px; /* Smaller font size for button */
+    }
+}

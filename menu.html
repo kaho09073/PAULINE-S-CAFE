@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Menu</title>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/menu.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../src/pauline.jpeg" alt="Pauline's Logo">
+        </div>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="menu.html" class="active">MENU</a>
+            <a href="booking.html">BOOKING</a>
+            <a href="support.html">JOIN OUR TEAM</a>
+        </nav>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/PaulinesRestaurantMY/" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a>
+            <a href="https://wa.me/60174730109" target="_blank"><i class="fab fa-whatsapp fa-2x"></i></a>
+            <a href="https://www.instagram.com/paulines_my/?hl=en" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+        </div>
+    </header>
+    <div class="menu-container">
+        <div class="category" onclick="navigateToCategory('Rice')">
+            <img src="../src/RICE.jpg" alt="Rice">
+            <div class="category-name">RICE</div>
+        </div>
+        <div class="category" onclick="navigateToCategory('Noodle')">
+            <img src="../src/Noodles.jpg" alt="Noodle">
+            <div class="category-name">NOODLE</div>
+        </div>
+        <div class="category" onclick="navigateToCategory('Western')">
+            <img src="../src/Western Food.jpg" alt="Western Food">
+            <div class="category-name">WESTERN FOOD</div>
+        </div>
+        <div class="category" onclick="navigateToCategory('Beverages')">
+            <img src="../src/Beverages.jpg" alt="Beverages">
+            <div class="category-name">Beverages</div>
+        </div>
+    </div>
+
+    <script>
+        function navigateToCategory(category) {
+            window.location.href = `category.html?category=${category}`;
+        }
+    </script>
+</body>
+</html>

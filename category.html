@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Category</title>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/category.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../src/pauline.jpeg" alt="Pauline's Logo">
+        </div>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="menu.html" class="active">MENU</a>
+            <a href="booking.html">BOOKING</a>
+            <a href="support.html">JOIN OUR TEAM</a>
+        </nav>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/PaulinesRestaurantMY/" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a>
+            <a href="https://wa.me/60174730109" target="_blank"><i class="fab fa-whatsapp fa-2x"></i></a>
+            <a href="https://www.instagram.com/paulines_my/?hl=en" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+        </div>
+        
+    </header>
+    <button onclick="goBack()" class="back-button">Back</button>
+    <div class="category-container" id="categoryContainer"></div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+
+        const foodData = {
+            Rice: [
+                { name: 'Chicken Rice', price: 'RM10', img: '../src/Noodles.jpg' },
+                { name: 'Fried Rice', price: 'RM10', img: '../src/Fried Rce.jpg' },
+                { name: 'Nasi Lemak', price: 'RM9.90', img: '../src/Nasi Lemak.jpeg' },
+                { name: 'Salted Fish Fried Rice', price: 'RM11.50', img: '../src/Salted Fish.jpg' },
+                { name: 'Tomyam Fried Rice', price: 'RM11', img: '../src/Tom-Yum.jpg' },
+                { name: 'Japanese Curry Chicken Rice', price: 'RM15.50', img: '../src/Japnese Curry.jpg' },
+                { name: 'Curry Chicken Rice', price: 'RM15.50', img: '../src/Curry Chicken Rice.jpg' },
+                { name: 'Asam Chicken Rice', price: 'RM15.50', img: '../src/Asam Chicken rice.jpg' },
+                { name: 'Sizzling Plate Rice', price: 'RM15.50', img: '../src/Sizzling plate Rice.jpg' },
+            ],
+            Noodle: [
+                { name: 'Fried Laksa', price: 'RM12.50', img: '../src/Fried Laksa.jpg' },
+                { name: 'Sizzling Noodle', price: 'RM15.50', img: '../src/Sizzling noodle.jpg' },
+                { name: 'Mee Udang', price: 'RM15.50', img: '../src/Mee Udang.jpg' },
+                { name: 'Mee Goreng', price: 'RM11.50', img: '../src/Mee Goreng.jpg' },
+                { name: 'Kaoy Tiao Basah', price: 'RM13.50', img: '../src/Kaoy Tiao.jpg' },
+            ],
+            Western: [
+                { name: 'Chicken Chop', price: 'RM15.50', img: '../src/Chicken Chop.jpg' },
+                { name: 'Fish and Chips', price: 'RM15.50', img: '../src/Fish and Chips.jpg' },
+                { name: 'Chicken Burger', price: 'RM14.50', img: '../src/Chicken Burger.jpg' },
+                { name: 'Oriental Chicken Chop', price: 'RM16.50', img: '../src/Oriental Chicken Chop.jpg' },
+                { name: 'Black Pepper Chicken Chop', price: 'RM16.50', img: '../src/Black Pepper Chicken Chop.jpg' },
+                { name: 'Beef Burger', price: 'RM15.50', img: '../src/Burger.jpg' },
+            ],
+            Beverages: [
+                { name: 'Beauty Snow Jelly', price: 'RM4.00', img: '../src/Beauty snow jelly.jpg' },
+                { name: 'Kopi Ice', price: 'RM3.50', img: '../src/Kopi Ice.jpg' },
+                { name: 'Milo Ice', price: 'RM3.50', img: '../src/Milo Ice.jpg' },
+                { name: 'Hor Ka Sai', price: 'RM3.50', img: '../src/Hor Ka Sai.jpg' },
+                { name: 'Kopi O Ice', price: 'RM 3.50', img: '../src/Kopi O ice.jpg'},
+                { name: 'Hot Kopi', price: 'RM3.50', img: '../src/Hot Kopi.jpg' },
+                { name: 'Hot Milo', price: 'RM3.50', img: '../src/Hot Milo.jpg' }, 
+                { name: 'Hot Kopi O', price: 'RM3.50', img: '../src/Hot Kopi O.jpg'}
+            ],
+        };
+
+        const categoryContainer = document.getElementById('categoryContainer');
+
+        foodData[category].forEach((item) => {
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('item');
+
+            const img = document.createElement('img');
+            img.src = item.img;
+            img.alt = item.name;
+
+            const nameDiv = document.createElement('div');
+            nameDiv.classList.add('item-name');
+            nameDiv.textContent = `${item.name} - ${item.price}`;
+
+            itemDiv.appendChild(img);
+            itemDiv.appendChild(nameDiv);
+            categoryContainer.appendChild(itemDiv);
+        });
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+/* Base styles for all screen sizes */
+.menu-container {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    margin-top: 250px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.category {
+    text-align: center;
+    cursor: pointer;
+}
+
+.category img {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.category img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.category-name {
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add text shadow for better readability */
+}
+
+body {
+    background-image: url("../src/Background.jpg");
+    background-size: cover;
+    background-position: center top;
+    margin: 0;
+   
+}
+/* Ensure equal alignment with grid layout */
+@media (min-width: 768px) {
+    .menu-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px; /* Spacing between grid items */
+        margin-top: 100px; /* Adjust margin for better alignment */
+        justify-content: center;
+    }
+}
+
+/* Add box styling for categories */
+.category {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: transform 0.2s ease-in-out;
+}
+
+.category:hover {
+    transform: scale(1.05); /* Interactive scaling effect */
+}

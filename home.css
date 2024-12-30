@@ -1,0 +1,131 @@
+/* Base styles for all screen sizes */
+.container {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px; /* Keeps content centered and limited on larger screens */
+    box-sizing: border-box;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 100px; /* Consistent spacing */
+    gap: 20px;
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+}
+
+.map {
+    flex: 1 1 60%; /* Flexible size but defaults to 60% width */
+    background-color: #ff9900;
+    border: 2px solid #8a2be2;
+    height: 50vh; /* Makes the height proportional to the viewport height */
+    max-height: 400px; /* Prevents it from becoming too tall */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: hidden; /* Ensures content doesn't overflow the borders */
+    padding: 0; /* Removes internal spacing */
+}
+
+.map iframe {
+    width: 100%; /* Ensures the map stretches to fill the container */
+    height: 100%; /* Ensures it adapts to the container height */
+    border: none; /* Removes default iframe border */
+    object-fit: cover; /* Ensures content fits inside without distortion */
+}
+
+
+.info {
+    flex: 1 1 35%; /* Flexible size but defaults to 35% width */
+    font-size: 16px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.info h3 {
+    margin-top: 0;
+}
+
+.info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info ul li img {
+    vertical-align: middle; /* Aligns icons with text */
+    margin-right: 8px; /* Optional spacing */
+}
+
+
+.opening-hours {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+body {
+    background-image: url("../src/Background.jpg");
+    background-size: cover;
+    background-position: center top;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Stack elements */
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .map {
+        width: 100%; /* Full width */
+        height: auto; /* Let height adjust dynamically */
+        padding: 10px;
+            height: 50vh; /* Makes the height proportional to the viewport height */
+            max-height: 400px; /* Prevents it from becoming too tall on large screens */
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .info {
+        width: 100%; /* Full width */
+        font-size: 14px;
+        text-align: center; /* Center-align text for readability */
+    }
+
+    .opening-hours {
+        font-size: 18px;
+    }
+}
+
+/* Mobile-specific adjustments (max-width: 480px) */
+@media (max-width: 480px) {
+    .map {
+        font-size: 14px; /* Smaller font size */
+        padding: 5px;
+    }
+
+    .info {
+        font-size: 12px; /* Adjust font for smaller screens */
+    }
+
+    .info ul li img {
+        width: 20px;
+        height: 20px; /* Scale icons down */
+    }
+
+    .opening-hours {
+        font-size: 16px;
+    }
+}
